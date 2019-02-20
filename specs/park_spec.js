@@ -48,13 +48,13 @@ describe('Park', function() {
   //   assert.strictEqual(park1.find_dinosaur_of_same_species(dinosaur1), [dinosaur1, dinosaur2])
   // });
 
-  // it('total_number_of_visitors_per_day', function(){
-  //   assert.strictEqual(park1.total_number_of_visitors_per_day(), 30)
-  // });
+  it('total_number_of_visitors_per_day', function(){
+    assert.strictEqual(park1.total_number_of_visitors_per_day(), 25)
+  });
 
-  // it('total_number_of_visitors_per_year', function(){
-  //   assert.strictEqual(park1.total_number_of_visitors_per_year(), 10950)
-  // });
+  it('total_number_of_visitors_per_year', function(){
+    assert.strictEqual(park1.total_number_of_visitors_per_year(), 10950)
+  });
 
   // it('total_income_from_visitors', function(){
   //   assert.strictEqual(park1.total_income_from_visitors(), 54,750)

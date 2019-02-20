@@ -21,11 +21,11 @@ Park.prototype.dinosaur_attracts_most_visitors = function(){
    let popularDinosaur = 0
    for (var dinosaur of this.collectionOfDinosaur){
      if (dinosaur.guestsAttractedPerDay > theMostVisitors){
-       let theMostVisitors = dinosaur.guestsAttractedPerDay;
-       let popularDinosaur = dinosaur
+        theMostVisitors = dinosaur.guestsAttractedPerDay;
+        popularDinosaur = dinosaur
      };
    };
-   console.log(popularDinosaur)
+    return popularDinosaur;
  };
 
 
@@ -37,7 +37,7 @@ Park.prototype.find_dinosaur_of_same_species = function(dinosaura){
       sameDinosaurArray.push(dinosaur);
     };
   };
-  console.log(sameDinosaurArray)
+  return sameDinosaurArray;
 };
 
 Park.prototype.total_number_of_visitors_per_day = function(){
@@ -47,12 +47,23 @@ Park.prototype.total_number_of_visitors_per_day = function(){
       visitorsVisited += dinosaur.guestsAttractedPerDay
     };
   };
+  return visitorsVisited;
 };
 
 
 Park.prototype.total_number_of_visitors_per_year = function(){
-  total_number_of_visitors_per_day * 365
+  // let total = total_number_of_visitors_per_day * 365
+  // return total;
+  let visitorsVisited = 0
+  for (var dinosaur of this.collectionOfDinosaur){
+    if (dinosaur.guestsAttractedPerDay > visitorsVisited){
+      visitorsVisited += dinosaur.guestsAttractedPerDay
+      var total = visitorsVisited * 365;
+    };
+  };
+  return total
 };
+// };
 
 Park.prototype.total_income_from_visitors = function(){
   total_number_of_visitors_per_year * this.ticketPrice
